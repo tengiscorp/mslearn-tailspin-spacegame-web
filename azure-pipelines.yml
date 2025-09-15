@@ -1,0 +1,14 @@
+trigger:
+  - none  # Manual run only
+
+pool:
+  name: Default
+
+jobs:
+- job: ProbeGitConnection
+  displayName: 'Probe GitHub Repo Connectivity'
+  steps:
+  - script: |
+      echo "Probing connection to GitHub repo..."
+      git ls-remote https://github.com/openssh/openssh-portable.git
+    displayName: 'Run git ls-remote'
